@@ -1,0 +1,57 @@
+【効果一覧】
+1．「import streamlit as st 」(Web画面・入力・状態管理　ライブラリ)
+・画面表示
+st.header()  
+st.markdown()
+st.image()
+
+・入力フォーム
+st.text_input()
+st.text_area()
+st.file_uploader()
+st.button()
+
+・状態管理
+st.session_state　入力などの状態が初期化されない＝投稿、返信可能
+
+・再描画
+st.rerun()
+
+2．3．「from PIL import Image, ImageDraw 」(画像の読み書き)
+・画像を開く
+Image.open("sample.png")
+
+・画像保存
+img.save(buf, format="PNG")
+
+・画像に図形を描く
+・アイコンを丸く切り抜くときに使用
+draw.ellipse(...)
+
+4．「from io import BytesIO」（画像をメモリで扱う）「画像 → 文字列 → JSON保存」を可能
+・画像を一度も保存せずに処理できる
+・Base64変換の中継地点
+buf = BytesIO()
+img.save(buf, format="PNG")
+
+5.「import base64」（画像を文字列化）
+・画像をJSONに保存できる
+HTMLの <img> に埋め込める
+base64.b64encode(buf.getvalue()).decode()
+
+6.「import os」（ファイル存在チェック）初回起動のエラーをなくす
+・JSONファイルが存在するか確認
+os.path.exists("users.json")
+
+7.「import json」(データ保存)　記憶
+・ユーザー情報保存
+・投稿内容保存
+・いいね・返信の永続化
+json.dump(data, f)
+json.load(f)
+
+8.「from datetime import datetime」（時刻・ID生成）
+・投稿時間の記録
+datetime.now().strftime('%Y-%m-%d %H:%M')
+---------------------------------------------------------
+
