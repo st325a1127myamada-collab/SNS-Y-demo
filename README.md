@@ -1,3 +1,3 @@
 # SNS-Y-demo
 A completely new microblogging site...?
-The run code is `streamlit run app.py`.
+If you'd like, feel free to leave a comment!
